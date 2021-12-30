@@ -1,0 +1,30 @@
+[
+    {
+        "key": "0",
+        "title": "Tim Hortons",
+        "type": "coffee",
+        "lat": 51.048798,
+        "lon": -114.075435
+    },
+    {
+        "key": "1",
+        "title": "The Keg Steakhouse",
+        "type": "restaurant",
+        "lat": 51.049674,
+        "lon": -114.069282
+    },
+    {
+        "key": "2",
+        "title": "Arcurve",
+        "type": "buisness",
+        "lat": 51.050078,
+        "lon": -114.070133
+    },
+    {
+        "key": "3",
+        "title": "cool ass sitting area",
+        "type": "poi",
+        "lat": 51.049213,
+        "lon": -114.070720
+    }
+]
