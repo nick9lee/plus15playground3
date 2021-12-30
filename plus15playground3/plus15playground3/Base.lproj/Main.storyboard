@@ -19,17 +19,89 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zsv-Zm-9o3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-kU-6ND">
+                                <rect key="frame" x="359" y="54" width="50" height="186"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc9-Gi-BTy" userLabel="button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="button1pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNE-mq-gZU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sf-6L-5Nl" userLabel="button2">
+                                        <rect key="frame" x="0.0" y="31" width="50" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="button2pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GqH-pW-vBg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-SI-yNi" userLabel="button3">
+                                        <rect key="frame" x="0.0" y="62" width="50" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="button3pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="If8-SM-zfR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YY-h4-USD" userLabel="button4">
+                                        <rect key="frame" x="0.0" y="93" width="50" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="button4pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xGm-Ld-bN2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re7-ph-Se7" userLabel="button5">
+                                        <rect key="frame" x="0.0" y="124" width="50" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="L"/>
+                                        <connections>
+                                            <action selector="button5pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lPN-3h-Jot"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2k-kZ-qjj" userLabel="button6">
+                                        <rect key="frame" x="0.0" y="155" width="50" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="C"/>
+                                        <connections>
+                                            <action selector="button6pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iFs-Er-Yuq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="wvV-hm-Mn0"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zsv-Zm-9o3" secondAttribute="bottom" id="1WA-bJ-8Hk"/>
+                            <constraint firstAttribute="trailing" secondItem="vSn-kU-6ND" secondAttribute="trailing" constant="5" id="5of-NV-snm"/>
                             <constraint firstItem="zsv-Zm-9o3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="alr-Dr-soW"/>
+                            <constraint firstItem="vSn-kU-6ND" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="nuZ-wI-7ju"/>
                             <constraint firstItem="zsv-Zm-9o3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="p7e-h2-GvP"/>
                             <constraint firstItem="zsv-Zm-9o3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qwd-cP-S9f"/>
+                            <constraint firstItem="vSn-kU-6ND" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="x35-En-rhs"/>
+                            <constraint firstItem="vSn-kU-6ND" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="10" id="zzm-XY-J2B"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button1" destination="Tc9-Gi-BTy" id="BTa-xf-sQk"/>
+                        <outlet property="button2" destination="1Sf-6L-5Nl" id="GWP-Kq-yXK"/>
+                        <outlet property="button3" destination="Lne-SI-yNi" id="M7Z-VA-FeK"/>
+                        <outlet property="button4" destination="4YY-h4-USD" id="atJ-wc-ea8"/>
+                        <outlet property="button5" destination="re7-ph-Se7" id="IQS-qK-2ER"/>
+                        <outlet property="button6" destination="k2k-kZ-qjj" id="sAQ-uq-V6W"/>
                         <outlet property="mapView" destination="zsv-Zm-9o3" id="z1u-ZD-RuJ"/>
                     </connections>
                 </viewController>
@@ -41,6 +113,21 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

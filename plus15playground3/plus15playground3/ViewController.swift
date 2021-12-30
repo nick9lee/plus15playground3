@@ -11,6 +11,12 @@ import MapKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var button5: UIButton!
+    @IBOutlet weak var button6: UIButton!
     
     
     override func viewDidLoad() {
@@ -60,9 +66,18 @@ class ViewController: UIViewController {
         mapView.addAnnotation(pin)
     }
     
-    
-
-
+    @IBAction func button1pressed(_ sender: Any) {
+    }
+    @IBAction func button2pressed(_ sender: Any) {
+    }
+    @IBAction func button3pressed(_ sender: Any) {
+    }
+    @IBAction func button4pressed(_ sender: Any) {
+    }
+    @IBAction func button5pressed(_ sender: Any) {
+    }
+    @IBAction func button6pressed(_ sender: Any) {
+    }
 }
 
 struct PointOfInterest: Codable {
