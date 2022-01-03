@@ -18,18 +18,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var button5: UIButton!
     @IBOutlet weak var button6: UIButton!
     
+    var displayCoffee = false;
+    var displayRestaurant = false;
+    var displayBuisness = false;
+    var displayPOI = false;
+    
+    //let locationManager = CLLocationManager()
+    
     
     override func viewDidLoad() {
         mapView.delegate = self
         
         mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         
-        parseJSON()
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.distanceFilter = kCLDistanceFilterNone
+//        locationManager.startUpdatingLocation()
+        
+//        mapView.showsUserLocation = true;
+        
+        
+        
+        //parseJSON()
         
         super.viewDidLoad()
     }
     
-    func parseJSON() {
+    func parseJSON(type: String) {
         guard let path = Bundle.main.path(forResource: "PointsOfInterest", ofType: "json") else {
             fatalError("unable to get json")
         }
@@ -43,7 +59,9 @@ class ViewController: UIViewController {
             result = try! JSONDecoder().decode([PointOfInterest].self, from: jsonData)
             
             for poi in result {
-                addPin(poi: poi)
+                if poi.type == type {
+                    addPin(poi: poi)
+                }
             }
         } catch {
            print("data is messed")
@@ -67,16 +85,63 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button1pressed(_ sender: Any) {
+        //coffee toggle
+        if displayCoffee {
+            displayCoffee = false;
+            removePin(type: "coffee")
+        } else {
+            displayCoffee = true;
+            parseJSON(type: "coffee")
+        }
     }
     @IBAction func button2pressed(_ sender: Any) {
+        //restaurant toggle
+        if displayRestaurant {
+            displayRestaurant = false;
+            removePin(type: "restaurant")
+        } else {
+            displayRestaurant = true;
+            parseJSON(type: "restaurant")
+        }
     }
     @IBAction func button3pressed(_ sender: Any) {
+        //buisness toggle
+        if displayBuisness {
+            displayBuisness = false;
+            removePin(type: "buisness")
+        } else {
+            displayBuisness = true;
+            parseJSON(type: "buisness")
+        }
     }
     @IBAction func button4pressed(_ sender: Any) {
+        //poi toggle
+        if displayPOI {
+            displayPOI = false;
+            removePin(type: "poi")
+        } else {
+            displayPOI = true;
+            parseJSON(type: "poi")
+        }
     }
     @IBAction func button5pressed(_ sender: Any) {
+        //center on user location
     }
     @IBAction func button6pressed(_ sender: Any) {
+        //center on calgary center
+        mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+    }
+    
+    func removePin(type: String) {
+        let annotations = self.mapView.annotations
+        
+        for annotation in annotations {
+            if let pin = annotation as? Pin {
+                if pin.type == type {
+                    self.mapView.removeAnnotation(annotation)
+                }
+            }
+        }
     }
 }
 
