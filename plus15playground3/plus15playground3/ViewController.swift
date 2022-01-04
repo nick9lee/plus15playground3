@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     var displayBuisness = false;
     var displayPOI = false;
     
-    //let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
@@ -31,12 +31,12 @@ class ViewController: UIViewController {
         
         mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.distanceFilter = kCLDistanceFilterNone
-//        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
         
-//        mapView.showsUserLocation = true;
+        mapView.showsUserLocation = true;
         
         
         
@@ -126,10 +126,19 @@ class ViewController: UIViewController {
     }
     @IBAction func button5pressed(_ sender: Any) {
         //center on user location
+        let userLocation = locationManager.location
+
+        if userLocation != nil {
+            let region = MKCoordinateRegion(center: userLocation!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+            
+            mapView.setRegion(region, animated: true)
+        }
     }
     @IBAction func button6pressed(_ sender: Any) {
         //center on calgary center
-        mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+        
+        mapView.setRegion(region, animated: true)
     }
     
     func removePin(type: String) {
