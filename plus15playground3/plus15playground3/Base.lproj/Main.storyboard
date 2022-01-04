@@ -21,10 +21,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-kU-6ND">
-                                <rect key="frame" x="367" y="67" width="47" height="186"/>
+                                <rect key="frame" x="353" y="67" width="61" height="217"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc9-Gi-BTy" userLabel="button1">
-                                        <rect key="frame" x="0.0" y="0.0" width="47" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="31"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -34,7 +34,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sf-6L-5Nl" userLabel="button2">
-                                        <rect key="frame" x="0.0" y="31" width="47" height="31"/>
+                                        <rect key="frame" x="0.0" y="31" width="61" height="31"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-SI-yNi" userLabel="button3">
-                                        <rect key="frame" x="0.0" y="62" width="47" height="31"/>
+                                        <rect key="frame" x="0.0" y="62" width="61" height="31"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YY-h4-USD" userLabel="button4">
-                                        <rect key="frame" x="0.0" y="93" width="47" height="31"/>
+                                        <rect key="frame" x="0.0" y="93" width="61" height="31"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -64,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re7-ph-Se7" userLabel="button5">
-                                        <rect key="frame" x="0.0" y="124" width="47" height="31"/>
+                                        <rect key="frame" x="0.0" y="124" width="61" height="31"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -74,7 +74,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2k-kZ-qjj" userLabel="button6">
-                                        <rect key="frame" x="0.0" y="155" width="47" height="31"/>
+                                        <rect key="frame" x="0.0" y="155" width="61" height="31"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -83,6 +83,13 @@
                                             <action selector="button6pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iFs-Er-Yuq"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jpy-dS-x9e">
+                                        <rect key="frame" x="0.0" y="186" width="61" height="32"/>
+                                        <segments>
+                                            <segment title="M"/>
+                                            <segment title="S"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -100,6 +107,7 @@
                         <outlet property="button4" destination="4YY-h4-USD" id="atJ-wc-ea8"/>
                         <outlet property="button5" destination="re7-ph-Se7" id="IQS-qK-2ER"/>
                         <outlet property="button6" destination="k2k-kZ-qjj" id="sAQ-uq-V6W"/>
+                        <outlet property="mapTypeSegmentedControl" destination="Jpy-dS-x9e" id="w42-9H-CWt"/>
                         <outlet property="mapView" destination="zsv-Zm-9o3" id="z1u-ZD-RuJ"/>
                     </connections>
                 </viewController>

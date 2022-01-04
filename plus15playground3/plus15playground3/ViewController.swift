@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button4: UIButton!
     @IBOutlet weak var button5: UIButton!
     @IBOutlet weak var button6: UIButton!
+    @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
     
     var displayCoffee = false;
     var displayRestaurant = false;
@@ -28,6 +29,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         mapView.delegate = self
+        
+        mapTypeSegmentedControl.addTarget(self, action: #selector(mapTypeChanged), for: .valueChanged)
         
         mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         
@@ -43,6 +46,17 @@ class ViewController: UIViewController {
         //parseJSON()
         
         super.viewDidLoad()
+    }
+    
+    @objc func mapTypeChanged(segmentedControl: UISegmentedControl) {
+        switch(segmentedControl.selectedSegmentIndex){
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        default:
+            mapView.mapType = .standard
+        }
     }
     
     func parseJSON(type: String) {
