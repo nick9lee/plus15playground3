@@ -41,14 +41,14 @@ class ClusterAnnotationView: MKAnnotationView {
 
             // Fill inner circle with white color
             UIColor.black.setFill()
-            UIBezierPath(ovalIn: CGRect(x: 8, y: 8, width: 24, height: 24)).fill()
+            UIBezierPath(ovalIn: CGRect(x: 5, y: 5, width: 30, height: 30)).fill()
 
             // Finally draw count text vertically and horizontally centered
             let attributes = [ NSAttributedString.Key.foregroundColor: UIColor.white,
                                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
             let text = "\(whole)"
             let size = text.size(withAttributes: attributes)
-            let rect = CGRect(x: 20 - size.width / 2, y: 20 - size.height / 2, width: size.width, height: size.height)
+            let rect = CGRect(x: 20 - (size.width) / 2, y: 20 - (size.height) / 2, width: size.width + 10, height: size.height + 10)
             text.draw(in: rect, withAttributes: attributes)
         }
     }
