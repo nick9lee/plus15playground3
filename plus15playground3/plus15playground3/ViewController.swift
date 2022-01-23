@@ -28,11 +28,17 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
         mapView.delegate = self
         
         mapTypeSegmentedControl.addTarget(self, action: #selector(mapTypeChanged), for: .valueChanged)
         
         mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.045000, longitude: -114.069000), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+        
+        mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
+        
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -40,12 +46,6 @@ class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         mapView.showsUserLocation = true;
-        
-        
-        
-        //parseJSON()
-        
-        super.viewDidLoad()
     }
     
     @objc func mapTypeChanged(segmentedControl: UISegmentedControl) {
@@ -193,10 +193,12 @@ extension ViewController: MKMapViewDelegate {
             return nil
         }
         
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "pointOfInterest")
+        guard let annotation = annotation as? Pin else { return nil }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "resuseId")
         
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "pointOfInterest")
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "resuseId")
         } else {
             annotationView?.annotation = annotation
         }
@@ -204,15 +206,8 @@ extension ViewController: MKMapViewDelegate {
         
         
         
-        if let pin = annotation as? Pin {
+            let pin = annotation
             
-            // figure out how to cluster
-//            let generalPinImage = UIImage(named: "generalPinLogo")
-//            generalPinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-//            let resizedGeneralPinImage = UIGraphicsGetImageFromCurrentImageContext()
-
-//            annotationView?.clusteringIdentifier = "pin"
-//            annotationView?.cluster?.image = resizedGeneralPinImage
             var size = CGSize(width: 200, height: 200)
             UIGraphicsBeginImageContext(size)
             
@@ -222,6 +217,7 @@ extension ViewController: MKMapViewDelegate {
             
             annotationView?.canShowCallout = true
             annotationView?.detailCalloutAccessoryView = UIImageView(image: resizedcalloutImage)
+            annotationView?.clusteringIdentifier = "clusterId";
             
             
             size = CGSize(width: 50, height: 50)
@@ -252,7 +248,7 @@ extension ViewController: MKMapViewDelegate {
                 
                 annotationView?.image = resizedPoiImage
             }
-        }
+        
         
         return annotationView
     }

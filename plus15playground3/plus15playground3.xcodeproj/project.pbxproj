@@ -14,6 +14,7 @@
 		7A5F214E277B9A5A00F42E14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A5F214D277B9A5A00F42E14 /* Assets.xcassets */; };
 		7A5F2151277B9A5A00F42E14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5F214F277B9A5A00F42E14 /* LaunchScreen.storyboard */; };
 		7A5F2159277BA0AA00F42E14 /* PointsOfInterest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A5F2158277BA0AA00F42E14 /* PointsOfInterest.json */; };
+		7A665C8F279DF91000FB22BE /* MapClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A665C8E279DF91000FB22BE /* MapClusterAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7A5F2150277B9A5A00F42E14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A5F2152277B9A5A00F42E14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A5F2158277BA0AA00F42E14 /* PointsOfInterest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PointsOfInterest.json; sourceTree = "<group>"; };
+		7A665C8E279DF91000FB22BE /* MapClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClusterAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				7A5F214D277B9A5A00F42E14 /* Assets.xcassets */,
 				7A5F214F277B9A5A00F42E14 /* LaunchScreen.storyboard */,
 				7A5F2152277B9A5A00F42E14 /* Info.plist */,
+				7A665C8E279DF91000FB22BE /* MapClusterAnnotationView.swift */,
 			);
 			path = plus15playground3;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				7A5F2149277B9A5400F42E14 /* ViewController.swift in Sources */,
 				7A5F2145277B9A5400F42E14 /* AppDelegate.swift in Sources */,
 				7A5F2147277B9A5400F42E14 /* SceneDelegate.swift in Sources */,
+				7A665C8F279DF91000FB22BE /* MapClusterAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
