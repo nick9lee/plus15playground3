@@ -52,8 +52,10 @@ class ViewController: UIViewController {
         switch(segmentedControl.selectedSegmentIndex){
         case 0:
             mapView.mapType = .standard
+            // mapView.userTrackingMode = .followWithHeading
         case 1:
             mapView.mapType = .hybrid
+            // mapView.userTrackingMode = .none
         default:
             mapView.mapType = .standard
         }
@@ -202,9 +204,6 @@ extension ViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
-        
-        
-        
         
             let pin = annotation
             
